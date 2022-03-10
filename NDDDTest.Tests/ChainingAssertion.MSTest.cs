@@ -201,7 +201,7 @@ namespace Microsoft.VisualStudio.TestTools.UnitTesting
         /// <summary>Assert.AreEqual, if T is IEnumerable then CollectionAssert.AreEqual</summary>
         public static void Is<T>(this T actual, T expected, string message = "")
         {
-            if (typeof(T) != typeof(String) && typeof(IEnumerable).IsAssignableFrom(typeof(T)))
+            if (typeof(T) != typeof(string) && typeof(IEnumerable).IsAssignableFrom(typeof(T)))
             {
                 ((IEnumerable)actual).Cast<object>().Is(((IEnumerable)expected).Cast<object>(), message);
                 return;
@@ -263,7 +263,7 @@ namespace Microsoft.VisualStudio.TestTools.UnitTesting
         /// <summary>Assert.AreNotEqual, if T is IEnumerable then CollectionAssert.AreNotEqual</summary>
         public static void IsNot<T>(this T actual, T notExpected, string message = "")
         {
-            if (typeof(T) != typeof(String) && typeof(IEnumerable).IsAssignableFrom(typeof(T)))
+            if (typeof(T) != typeof(string) && typeof(IEnumerable).IsAssignableFrom(typeof(T)))
             {
                 ((IEnumerable)actual).Cast<object>().IsNot(((IEnumerable)notExpected).Cast<object>(), message);
                 return;
@@ -379,7 +379,7 @@ namespace Microsoft.VisualStudio.TestTools.UnitTesting
                 throw new AssertFailedException(formatted);
             }
 
-            return (T)exception;
+            return exception;
         }
 
         /// <summary>expected testCode throws ContractException</summary>
