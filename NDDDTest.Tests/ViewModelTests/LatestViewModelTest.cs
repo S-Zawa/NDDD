@@ -10,6 +10,10 @@ namespace NDDDTest.Tests.ViewModelTests
         public void シナリオ()
         {
             var vm = new LatestViewModel();
+            vm.Search();
+            vm.AreaIdText.Is("0001");
+            vm.MeasureDateText.Is("2012/12/12 12:34:56");
+            vm.MeasureValueText.Is("12.34℃");
         }
     }
 }
