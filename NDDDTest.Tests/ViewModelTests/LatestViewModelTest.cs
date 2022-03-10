@@ -1,5 +1,9 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Moq;
+using NDDD.Domain.Entities;
+using NDDD.Domain.Repositories;
 using NDDD.WinForm.ViewModels;
+using System;
 
 namespace NDDDTest.Tests.ViewModelTests
 {
@@ -9,7 +13,12 @@ namespace NDDDTest.Tests.ViewModelTests
         [TestMethod]
         public void シナリオ()
         {
-            var vm = new LatestViewModel();
+            var entity = new MeasureEntity(
+                1, Convert.ToDateTime("2012/12/12 12:34:56"),
+                12.34f);
+            var measureMoq = new Mock<IMeasureRepository>();
+            measureMoq.Setup(x => x.GetLatest()).Returns(entity);
+            var vm = new LatestViewModel(measureMoq.Object);
             vm.Search();
             vm.AreaIdText.Is("0001");
             vm.MeasureDateText.Is("2012/12/12 12:34:56");
