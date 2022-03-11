@@ -1,4 +1,4 @@
-﻿using NDDD.Infrastructure.Fake;
+﻿using NDDD.Infrastructure;
 using NDDD.WinForm.ViewModels;
 using System;
 using System.Windows.Forms;
@@ -7,7 +7,7 @@ namespace NDDD.WinForm.Views
 {
     public partial class LatestView : Form
     {
-        private LatestViewModel _viewModel = new LatestViewModel(new MeasureFake());
+        private LatestViewModel _viewModel = new LatestViewModel(Factories.CreateMeasure());
         public LatestView()
         {
             InitializeComponent();
@@ -18,10 +18,7 @@ namespace NDDD.WinForm.Views
         }
 
 
-        private void label3_Click(object sender, EventArgs e)
-        {
 
-        }
 
         private void SearchButton_Click(object sender, EventArgs e)
         {
