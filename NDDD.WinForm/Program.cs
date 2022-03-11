@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NDDD.WinForm.Views;
+using System;
 using System.Windows.Forms;
 
 namespace NDDD.WinForm
@@ -13,7 +14,7 @@ namespace NDDD.WinForm
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new LatestView());
         }
     }
 }
