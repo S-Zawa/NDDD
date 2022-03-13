@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using NDDD.Domain;
+using System.Windows.Forms;
 
 namespace NDDD.WinForm.Views
 {
@@ -13,6 +14,7 @@ namespace NDDD.WinForm.Views
 #if DEBUG
             toolStripStatusLabel1.Visible = true;
 #endif
+            UserIdLabel.Text = Shared.LoginId;
         }
     }
 }

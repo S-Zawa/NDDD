@@ -76,6 +76,7 @@
             this.LoginButton.TabIndex = 4;
             this.LoginButton.Text = "ログイン";
             this.LoginButton.UseVisualStyleBackColor = true;
+            this.LoginButton.Click += new System.EventHandler(this.LoginButton_Click);
             // 
             // LoginView
             // 
@@ -89,6 +90,11 @@
             this.Controls.Add(this.label1);
             this.Name = "LoginView";
             this.Text = "LoginView";
+            this.Controls.SetChildIndex(this.label1, 0);
+            this.Controls.SetChildIndex(this.LoginIdTextBox, 0);
+            this.Controls.SetChildIndex(this.label2, 0);
+            this.Controls.SetChildIndex(this.PasswordTextBox, 0);
+            this.Controls.SetChildIndex(this.LoginButton, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
