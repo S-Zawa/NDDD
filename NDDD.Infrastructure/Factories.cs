@@ -8,10 +8,12 @@ namespace NDDD.Infrastructure
     {
         public static IMeasureRepository CreateMeasure()
         {
+# if DEBUG
             if (Shared.IsFake)
             {
                 return new MeasureFake();
             }
+# endif
             return new MeasureSqlServer();
         }
     }
