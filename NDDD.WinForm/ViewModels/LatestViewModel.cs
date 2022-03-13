@@ -1,6 +1,5 @@
 ﻿using NDDD.Domain.Repositories;
 using NDDD.Infrastructure;
-using System;
 
 namespace NDDD.WinForm.ViewModels
 {
@@ -11,14 +10,16 @@ namespace NDDD.WinForm.ViewModels
         private string _areaIdText = string.Empty;
         private string _measureDateText = string.Empty;
         private string _measureValueText = string.Empty;
+
         public LatestViewModel() : this(Factories.CreateMeasure())
         {
-
         }
+
         public LatestViewModel(IMeasureRepository measureRepository)
         {
             _measureRepository = measureRepository;
         }
+
         public string AreaIdText
         {
             get
@@ -30,6 +31,7 @@ namespace NDDD.WinForm.ViewModels
                 SetProperty(ref _areaIdText, value);
             }
         }
+
         public string MeasureDateText
         {
             get
@@ -41,6 +43,7 @@ namespace NDDD.WinForm.ViewModels
                 SetProperty(ref _measureDateText, value);
             }
         }
+
         public string MeasureValueText
         {
             get
@@ -56,9 +59,9 @@ namespace NDDD.WinForm.ViewModels
         public void Search()
         {
             var measure = _measureRepository.GetLatest();
-            AreaIdText = measure.AreaId.ToString().PadLeft(4, '0');
-            MeasureDateText = measure.MeasureDate.ToString("yyyy/MM/dd HH:mm:ss");
-            MeasureValueText = Math.Round(measure.MeasureValue, 2) + "℃";
+            AreaIdText = measure.AreaId.DisplayValue;
+            MeasureDateText = measure.MeasureDate.DisplayValue;
+            MeasureValueText = measure.MeasureValue.DisplayValue;
         }
     }
 }
