@@ -1,6 +1,5 @@
 ﻿using NDDD.WinForm.ViewModels;
 using System;
-using System.Windows.Forms;
 
 namespace NDDD.WinForm.Views
 {
@@ -25,7 +24,7 @@ namespace NDDD.WinForm.Views
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                base.ExceptionProc(ex);
             }
         }
     }
