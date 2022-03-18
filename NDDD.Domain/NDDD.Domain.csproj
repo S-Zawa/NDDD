@@ -80,6 +80,7 @@
     <Compile Include="Repositories\IMeasureRepository.cs" />
     <Compile Include="Repositories\MeasureRepository.cs" />
     <Compile Include="Shared.cs" />
+    <Compile Include="StaticValues\Measures.cs" />
     <Compile Include="ValueObjects\AreaId.cs" />
     <Compile Include="ValueObjects\MeasureDate.cs" />
     <Compile Include="ValueObjects\MeasureValue.cs" />
@@ -92,5 +93,6 @@
     </None>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
